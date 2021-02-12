@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+#SBATCH -p short --out logs/index.log
 module load samtools/1.11
 module load bwa/0.7.17
 if [ -f config.txt ]; then
@@ -7,7 +8,7 @@ fi
 mkdir -p $GENOMEFOLDER
 pushd $GENOMEFOLDER
 # THIS IS EXAMPLE CODE FOR HOW TO DOWNLOAD DIRECT FROM FUNGIDB
-RELEASE=39
+RELEASE=50
 SPECIES=AfumigatusAf293
 URL=https://fungidb.org/common/downloads/release-${RELEASE}/$SPECIES
 PREF=FungiDB-${RELEASE}_${SPECIES}
