@@ -43,17 +43,15 @@ if [ $N -gt $MAX ]; then
 fi
 
 IFS=,
-
-
 tail -n +2 $SAMPFILE | sed -n ${N}p | while read STRAIN FILEBASE
 do
   PREFIX=$STRAIN
   FINALFILE=$ALNFOLDER/$STRAIN.$HTCEXT
   if [ ! -s $FINALFILE ]; then
     BAMSTOMERGE=()
-    for BASEPATTERN in $(echo $FILEBASE | perl -p -e 's/;/,/')
+    for BASEPATTERN in $(echo $FILEBASE | perl -p -e 's/\;/,/g');
     do
-      BASE=$(basename $BASEPATTERN | perl -p -e 's/(\S+)\[12\].+/$1/; s/_R?$//;')
+      BASE=$(basename $BASEPATTERN | perl -p -e 's/(\S+)\[12\].+/$1/g; s/_R?$//g;')
       # END THIS PART IS PROBABLY PROJECT SPECIFIC
       echo "STRAIN is $STRAIN BASE is $BASE BASEPATTERN is $BASEPATTERN"
 
