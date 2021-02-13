@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import csv,sys
+import csv,sys,re
 outdir="SRA"
 outcsv = csv.writer(sys.stdout,delimiter=",")
 with open("lib/SRA_samples.csv","rt") as inp:
@@ -9,6 +9,7 @@ with open("lib/SRA_samples.csv","rt") as inp:
         if row[0].startswith("RunAcc"):
             continue
         strain = row[1]
+        strain = re.sub(r' ','_',strain)
         srr    = row[0]
         srr    = "{}/{}_[12].fastq.gz".format(outdir,srr)
         if strain in table:
