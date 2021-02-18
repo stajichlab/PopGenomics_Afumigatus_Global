@@ -158,6 +158,7 @@ COH_762,COH_1/COH762_[12].fq.gz
 COH_880,COH_1/COH880_[12].fq.gz
 COH_913,COH_1/COH913_[12].fq.gz
 COH_934,COH_1/COH934_[12].fq.gz
+COH_371,COH_1/COH371_[12].fq.gz
 COH_1.2,COH_2/JS_Pool_200206_JS_1_S73_L004_R[12]_001.fastq.gz
 COH_1192.2,COH_2/JS_Pool_200206_JS_1192_S72_L004_R[12]_001.fastq.gz
 COH_694.2,COH_2/JS_Pool_200206_JS694_S68_L004_R[12]_001.fastq.gz
@@ -501,3 +502,6 @@ C554,UK_Imperial/C554_[12].fastq.gz
 B8783_CDC-17,low_coverage/B8783_CDC-17_R[12].fastq.gz
 B9781_CDC-19,low_coverage/B9781_CDC-19_R[12].fastq.gz
 Corn_Silage_Outer_CA-2,low_coverage/Corn_Silage_Outer_CA-2_R[12].fastq.gz
+204NB-8,Cramer_Diversity/204NB-8_R[12].fastq.gz
+ATCC_46645.DMC,Cramer_Diversity/ATCC46645_R[12].fastq.gz
+W72310,Cramer_Diversity/W72310_R[12].fastq.gz
