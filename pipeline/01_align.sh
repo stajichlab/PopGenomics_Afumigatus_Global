@@ -6,7 +6,7 @@ module load picard
 module load gatk/4
 module load java/13
 
-MEM=32g
+MEM=128g
 
 TMPOUTDIR=tmp
 
@@ -47,6 +47,7 @@ tail -n +2 $SAMPFILE | sed -n ${N}p | while read STRAIN FILEBASE
 do
   PREFIX=$STRAIN
   FINALFILE=$ALNFOLDER/$STRAIN.$HTCEXT
+  echo "To process $PREFIX and $FINALFILE"
   if [ ! -s $FINALFILE ]; then
     BAMSTOMERGE=()
     for BASEPATTERN in $(echo $FILEBASE | perl -p -e 's/\;/,/g');
