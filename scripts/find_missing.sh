@@ -12,9 +12,10 @@ source config.txt
 
 ALIGN=()
 GVCF=()
+N=1
 for n in $(cut -d, -f1 $SAMPFILE | tail -n +2); do 
 	if [ ! -f $ALNFOLDER/$n.$HTCEXT ]; then 
-#		echo "($N) $n"; 
+		echo "($N) $n"; 
 		ALIGN+=( $N )
 	fi
 	if [ ! -f $GVCFFOLDER/$n.g.vcf.gz ]; then
