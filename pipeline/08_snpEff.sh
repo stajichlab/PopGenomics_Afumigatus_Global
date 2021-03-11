@@ -11,9 +11,9 @@ module load yq
 SNPEFFGENOME=AfumigatusAf293_FungiDB_50
 GFFGENOME=$SNPEFFGENOME.gff
 
-DOMAINS=$TOPFOLDER/genome/$(basename ${GFFGENOME} .gff)_InterproDomains.txt
 MEM=64g
 TOPFOLDER=`pwd` # expecting to be run in top folder of the github checkout
+DOMAINS=$TOPFOLDER/genome/$(basename ${GFFGENOME} .gff)_InterproDomains.txt
 
 # this module defines SNPEFFJAR and SNPEFFDIR
 if [ -f config.txt ]; then
