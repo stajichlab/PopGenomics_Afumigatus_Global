@@ -30,7 +30,7 @@ if [ $N -gt $MAX ]; then
 fi
 
 IFS=,
-tail -n +2 $SAMPFILE | sed -n ${N}p | while read FILEBASE STRAIN BioSample Center Experiment Project Organism
+cat $SAMPFILE | sed -n ${N}p | while read STRAIN FILEBASE
 do
   UMAP=$UNMAPPED/${STRAIN}.$FASTQEXT
   UMAPSINGLE=$UNMAPPED/${STRAIN}_single.$FASTQEXT

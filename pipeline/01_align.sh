@@ -43,7 +43,7 @@ if [ $N -gt $MAX ]; then
 fi
 
 IFS=,
-tail -n +2 $SAMPFILE | sed -n ${N}p | while read STRAIN FILEBASE
+cat $SAMPFILE | sed -n ${N}p | while read STRAIN FILEBASE
 do
   PREFIX=$STRAIN
   FINALFILE=$ALNFOLDER/$STRAIN.$HTCEXT

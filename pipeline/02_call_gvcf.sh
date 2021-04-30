@@ -37,7 +37,7 @@ fi
 hostname
 date
 IFS=,
-tail -n +2 $SAMPFILE | sed -n ${N}p | while read STRAIN SAMPID
+cat $SAMPFILE | sed -n ${N}p | while read STRAIN SAMPID
 do
   # BEGIN THIS PART IS PROJECT SPECIFIC LIKELY
   # END THIS PART IS PROJECT SPECIFIC LIKELY
