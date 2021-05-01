@@ -202,6 +202,7 @@ Populations:
     - Moose_3-1.2
     - Oryx_1
     - ICMP-23421
+    - ICMP-23512
     - Af10_WG
     - Af210_WG
     - Afum_niveus_RP2014_WG
@@ -767,3 +768,133 @@ Populations:
     - SF2S9
     - SF3S1
     - SF3S10
+
+  Avian:
+    - USGS_25297_1_HI
+    - USGS_25404_1_HI
+    - USGS_26080_10_WA
+    - USGS_26080_3_WA
+    - USGS_26080_6_WA
+    - USGS_26090_1_WA
+    - USGS_26090_2_WA
+    - USGS_26090_3_WA
+    - USGS_26090_4_WA
+    - USGS_26090_5_WA
+    - USGS_26090_7_WA
+    - USGS_26090_8_WA
+    - USGS_26113_1_WA
+    - USGS_26201_1_WA
+    - USGS_26218_1_MT
+    - USGS_26218_2_MT
+    - USGS_26218_3_MT
+    - USGS_26222_1_NV
+    - USGS_26501_1_MN
+    - USGS_26516_1_IL
+    - USGS_26528_1_WI
+    - USGS_26555_4_WY
+    - USGS_26624_1_OH
+    - USGS_26624_4_OH
+    - USGS_26696_1_WI
+    - USGS_26696_2_WI
+    - USGS_26707_2_ND
+    - USGS_26829_1_WI
+    - USGS_26829_2_WI
+    - USGS_26835_1_MI
+    - USGS_26879_1_WI
+    - USGS_27510_1_FL
+    - USGS_27539_1_ME
+    - USGS_27540_1_ME
+    - USGS_27562_1_MD
+    - USGS_27717_1_WA
+    - USGS_27721_1_KS
+    - USGS_27784_1_SC
+    - USGS_28113_1_MA
+    - USGS_28253_1_SC
+    - USGS_28267_1_CA
+    - USGS_28426_1_NE
+    - USGS_28429_3_MN
+    - USGS_28834_1_NV
+    - USGS_28858_1_WI
+    - USGS_28913_1_MS
+    - USGS_28913_2_MS
+    - USGS_29376_1_WI
+    - USGS_29436_1_MA
+    - USGS_29436_2_MA
+    - COH_1.2
+    - COH_1192.2
+    - COH_371
+    - COH_400
+    - COH_694
+    - COH_694.2
+    - COH_762
+    - COH_880
+    - COH_885.2
+    - COH_913
+    - COH_934
+    - COH_934.2
+    - ICMP-23421
+    - ICMP-23512
+    - CEA10-2
+    - Af293
+
+  NZ: 
+    - ICMP-23421
+    - ICMP-23512
+
+  Avian2: 
+    - USGS_25297_1_HI
+    - USGS_25404_1_HI
+    - USGS_26080_10_WA
+    - USGS_26080_3_WA
+    - USGS_26080_6_WA
+    - USGS_26090_1_WA
+    - USGS_26090_2_WA
+    - USGS_26090_3_WA
+    - USGS_26090_4_WA
+    - USGS_26090_5_WA
+    - USGS_26090_7_WA
+    - USGS_26090_8_WA
+    - USGS_26113_1_WA
+    - USGS_26201_1_WA
+    - USGS_26218_1_MT
+    - USGS_26218_2_MT
+    - USGS_26218_3_MT
+    - USGS_26222_1_NV
+    - USGS_26501_1_MN
+    - USGS_26516_1_IL
+    - USGS_26528_1_WI
+    - USGS_26555_4_WY
+    - USGS_26624_1_OH
+    - USGS_26624_4_OH
+    - USGS_26696_1_WI
+    - USGS_26696_2_WI
+    - USGS_26707_2_ND
+    - USGS_26829_1_WI
+    - USGS_26829_2_WI
+    - USGS_26835_1_MI
+    - USGS_26879_1_WI
+    - USGS_27510_1_FL
+    - USGS_27539_1_ME
+    - USGS_27540_1_ME
+    - USGS_27562_1_MD
+    - USGS_27717_1_WA
+    - USGS_27721_1_KS
+    - USGS_27784_1_SC
+    - USGS_28113_1_MA
+    - USGS_28253_1_SC
+    - USGS_28267_1_CA
+    - USGS_28426_1_NE
+    - USGS_28429_3_MN
+    - USGS_28834_1_NV
+    - USGS_28858_1_WI
+    - USGS_28913_1_MS
+    - USGS_28913_2_MS
+    - USGS_29376_1_WI
+    - USGS_29436_1_MA
+    - USGS_29436_2_MA
+    - ICMP-23421
+    - ICMP-23512
+    - CEA10-2
+    - Af293
+    - 08-19-02-10
+    - Afu_218-E11

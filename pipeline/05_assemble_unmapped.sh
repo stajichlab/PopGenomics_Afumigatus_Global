@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-#SBATCH -p batch -N 1 -n 8 --mem 24gb --out logs/assemble_unmapped.%a.log
+#SBATCH -p batch -N 1 -n 8 --mem 24gb --out logs/assemble_unmapped.%a.log --time 24:00:00
 
 module load SPAdes/3.14.1
 MEM=24
