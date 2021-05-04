@@ -3,6 +3,7 @@
 #--time 48:00:00
 hostname
 MEM=24g
+module unload R/4.0.1
 module unload java
 module load picard
 module load gatk/4
