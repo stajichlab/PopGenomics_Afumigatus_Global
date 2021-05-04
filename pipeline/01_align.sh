@@ -99,14 +99,20 @@ do
   fi #FINALFILE created or already exists
   FQ=$(basename $FASTQEXT .gz)
   UMAP=$UNMAPPED/${STRAIN}.$FQ
+  UMAPF=$UNMAPPED/${STRAIN}.F.$FQ
+  UMAPR=$UNMAPPED/${STRAIN}.R.$FQ
+
   UMAPSINGLE=$UNMAPPED/${STRAIN}_single.$FQ
   #echo "$UMAP $UMAPSINGLE $FQ"
 
   if [ ! -f $UMAP.gz ]; then
     module load BBMap
-    samtools fastq -f 4 --threads $CPU -N -s $UMAPSINGLE -o $UMAP $FINALFILE
-    pigz $UMAPSINGLE
-    repair.sh in=$UMAP out=$UMAP.gz
-    unlink $UMAP
+    samtools fastq -f 4 --threads $CPU -N -1 $UMAPF -2 $UMAPR $FINALFILE > $UMAPSINGLE
+    if [ -s $UMAP_SINGLE ]; then
+    	pigz $UMAPSINGLE
+    fi
+    repair.sh in=$UMAPF in2=$UMAPR out=$UMAP.gz
+    unlink $UMAPF
+    unlink $UMAPR
   fi
 done
