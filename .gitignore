@@ -10,3 +10,4 @@
 *.amb
 *.pac
 logs/*.log
+logs/*.log.gz
