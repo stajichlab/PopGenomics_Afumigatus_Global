@@ -7,13 +7,13 @@ joinByString() {
   shift
   printf "%s" "$first" "${@/#/$separator}"
 }
-export -f joinByString
+#export -f joinByString
 source config.txt
 
 ALIGN=()
 GVCF=()
 N=1
-for n in $(cut -d, -f1 $SAMPFILE | tail -n +2); do 
+for n in $(cut -d, -f1 $SAMPFILE ); do 
 	if [ ! -f $ALNFOLDER/$n.$HTCEXT ]; then 
 		echo "($N) $n"; 
 		ALIGN+=( $N )
@@ -24,7 +24,9 @@ for n in $(cut -d, -f1 $SAMPFILE | tail -n +2); do
 	N=$(expr $N + 1)
 done
 
-ALNLIST=$(joinByString , "${ALIGN[@]}")
+#ALNLIST=$(joinByString , "${ALIGN[@]}")
+ALNLIST="${ALIGN[@]}"
 echo "sbatch -a $ALNLIST pipeline/01_align.sh"
-VCFLIST=$(joinByString , "${GVCF[@]}")
+#VCFLIST=$(joinByString , "${GVCF[@]}")
+VCFLIST="${GVCF[@]}"
 echo "sbatch -a $VCFLIST pipeline/02_call_gvcf.sh"
