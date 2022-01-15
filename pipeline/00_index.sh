@@ -1,6 +1,5 @@
 #!/usr/bin/bash
-#SBATCH -p short --out logs/index.log
-module load samtools/1.11
+module load samtools/1.12
 module load bwa/0.7.17
 if [ -f config.txt ]; then
 	source config.txt
@@ -8,7 +7,7 @@ fi
 mkdir -p $GENOMEFOLDER
 pushd $GENOMEFOLDER
 # THIS IS EXAMPLE CODE FOR HOW TO DOWNLOAD DIRECT FROM FUNGIDB
-RELEASE=50
+RELEASE=39
 SPECIES=AfumigatusAf293
 URL=https://fungidb.org/common/downloads/release-${RELEASE}/$SPECIES
 PREF=FungiDB-${RELEASE}_${SPECIES}
@@ -42,5 +41,5 @@ if [[ ! -f $DICT || $FASTAFILE -nt $DICT ]]; then
 	samtools dict $FASTAFILE > $DICT
 	ln -s $DICT $FASTAFILE.dict 
 fi
-
+grep ">" $FASTAFILE | perl -p -e 's/>((Chr)?(\d+|mito)_\S+)\s+.+/$1,$3/' > chrom_nums.csv
 popd

@@ -52,8 +52,8 @@ do
       time gatk --java-options -Xmx${MEM} HaplotypeCaller \
    	  --emit-ref-confidence GVCF --sample-ploidy 1 \
    	  --input $ALNFILE --reference $REFGENOME \
-   	  --output $GVCF --native-pair-hmm-threads $CPU \
-	     -G StandardAnnotation -G AS_StandardAnnotation -G StandardHCAnnotation
+   	  --output $GVCF --native-pair-hmm-threads $CPU --sample-name $STRAIN \
+	  -G StandardAnnotation -G AS_StandardAnnotation -G StandardHCAnnotation
  fi
  bgzip --threads $CPU -f $GVCF
  tabix $GVCF.gz

@@ -16,12 +16,12 @@ if [ -z $CPU ]; then
 fi
 MEM=64g
 TOPFOLDER=`pwd` # expecting to be run in top folder of the github checkout
-DOMAINS=$TOPFOLDER/genome/$(basename ${GFFGENOME} .gff)_InterproDomains.txt
 
 # this module defines SNPEFFJAR and SNPEFFDIR
 if [ -f config.txt ]; then
   source config.txt
 fi
+DOMAINS=$TOPFOLDER/genome/$(basename ${GFFGENOME} .gff)_InterproDomains.txt
 GFFGENOMEFILE=$GENOMEFOLDER/$GFFGENOME
 FASTAGENOMEFILE=$GENOMEFOLDER/$GENOMEFASTA
 if [ -z $SNPEFFJAR ]; then

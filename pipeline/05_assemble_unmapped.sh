@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 #SBATCH -p batch -N 1 -n 8 --mem 24gb --out logs/assemble_unmapped.%a.log --time 24:00:00
 
-module load SPAdes/3.14.1
+module load SPAdes/3.15.2
 MEM=24
 UNMAPPEDASM=unmapped_asm
 UNMAPPED=unmapped
@@ -35,8 +35,12 @@ do
   UMAP=$UNMAPPED/${STRAIN}.$FASTQEXT
   UMAPSINGLE=$UNMAPPED/${STRAIN}_single.$FASTQEXT
   if [[ ! -s $UMAP && ! -s $UMAPSINGLE ]]; then
-    echo "Need unmapped FASTQ file, skipping $STRAIN ($FILEBASE)"
-  else
-    spades.py --pe-12 1 $UMAP --pe-s 1 $UMAPSINGLE -o $UNMAPPEDASM/$STRAIN -t $CPU -m $MEM --careful
+      echo "Need unmapped FASTQ file, skipping $STRAIN ($FILEBASE)"
+  elif [ ! -s $UMAP ]; then
+      spades.py --pe-s 1 $UMAPSINGLE -o $UNMAPPEDASM/$STRAIN -t $CPU -m $MEM --careful
+  elif [ ! -s $UMAPSINGLE ]; then
+      spades.py --pe-12 1 $UMAP -o $UNMAPPEDASM/$STRAIN -t $CPU -m $MEM --careful
+  else 
+      spades.py --pe-12 1 $UMAP --pe-s 1 $UMAPSINGLE -o $UNMAPPEDASM/$STRAIN -t $CPU -m $MEM --careful
   fi
 done

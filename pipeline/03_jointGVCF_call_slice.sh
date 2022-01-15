@@ -11,18 +11,10 @@ module load java/13
 module load bcftools
 module load parallel
 module load yq
+module load workspace/scratch
 
 source config.txt
 
-declare -x TEMPDIR=$TEMP/$USER/$$
-
-cleanup() {
-	#echo "rm temp is: $TEMPDIR"
-	rm -rf $TEMPDIR
-}
-
-# Set trap to ensure cleanupis stopped
-trap "cleanup; rm -rf $TEMPDIR; exit" SIGHUP SIGINT SIGTERM EXIT
 
 GVCF_INTERVAL=1
 N=${SLURM_ARRAY_TASK_ID}
@@ -84,15 +76,14 @@ do
 	SELECTSNP=$STEM.SNP.selected.vcf
 	SELECTINDEL=$STEM.INDEL.selected.vcf
 	echo "$STEM is stem; GENOVCFOUT=$STEM.all.vcf POPNAME=$POPNAME slice=$SLICEVCF"
-	mkdir -p $TEMPDIR
 	if [ ! -f $GENOVCFOUT.gz ]; then
 	    if [ ! -f $GENOVCFOUT ]; then
-		DB=$TEMPDIR/${GVCFFOLDER}_slice_$N
+		DB=$SCRATCH/${GVCFFOLDER}_slice_$N
 		rm -rf $DB
-		gatk  --java-options "-Xmx$MEM -Xms$MEM" GenomicsDBImport --consolidate --merge-input-intervals --genomicsdb-workspace-path $DB $FILES $INTERVALS --tmp-dir $TEMPDIR --reader-threads $CPU
+		gatk  --java-options "-Xmx$MEM -Xms$MEM" GenomicsDBImport --consolidate --merge-input-intervals --genomicsdb-workspace-path $DB $FILES $INTERVALS --tmp-dir $SCRATCH --reader-threads $CPU
 		#--reader-threads $CPU
 		#gatk  --java-options "-Xmx$MEM -Xms$MEM" GenomicsDBImport --genomicsdb-workspace-path $DB $FILES $INTERVALS  --reader-threads $CPU
-		time gatk GenotypeGVCFs --reference $REFGENOME --output $GENOVCFOUT -V gendb://$DB --tmp-dir $TEMPDIR
+		time gatk GenotypeGVCFs --reference $REFGENOME --output $GENOVCFOUT -V gendb://$DB --tmp-dir $SCRATCH
 		ls -l $TEMPDIR
 		rm -rf $DB
 	    fi
@@ -178,7 +169,3 @@ do
 	    tabix $SELECTINDEL.gz
 	fi
 done
-
-if [ -d $TEMPDIR ]; then
-	rmdir $TEMPDIR
-fi
