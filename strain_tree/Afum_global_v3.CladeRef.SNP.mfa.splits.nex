@@ -1,0 +1,46 @@
+#nexus
+
+BEGIN Taxa;
+DIMENSIONS ntax=11;
+TAXLABELS
+[1] 'TP32'
+[2] 'RSF2S8'
+[3] 'F16216'
+[4] 'AF293'
+[5] 'AF210'
+[6] 'AF100-10_5'
+[7] 'CEA10'
+[8] 'AF106-6_5'
+[9] 'CM4946'
+[10] 'W72310'
+[11] 'Afischeri'
+;
+END; [Taxa]
+
+BEGIN Splits;
+DIMENSIONS ntax=11 nsplits=20;
+FORMAT labels=no weights=yes confidences=no intervals=no;
+MATRIX
+	100	 1,
+	100	 9,
+	100	 10,
+	100	 9 10,
+	100	 1 9 10,
+	100	 2,
+	100	 3,
+	100	 5,
+	100	 3 5,
+	100	 2 3 5,
+	100	 6,
+	100	 7,
+	100	 8,
+	100	 7 8,
+	99	 6 7 8,
+	100	 1 4 9 10 11,
+	100	 4,
+	100	 1 9 10 11,
+	100	 11,
+	1	 2 3 5 6,
+;
+END; [Splits]
+

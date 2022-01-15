@@ -1,0 +1,162 @@
+IQ-TREE 2.1.1 COVID-edition built Aug 22 2020
+
+Input file name: strain_tree/Afum_global_v3.DAPC_Clade_3.SNP.mfa
+Type of analysis: tree reconstruction + ultrafast bootstrap (1000 replicates)
+Random seed number: 6715
+
+REFERENCES
+----------
+
+To cite IQ-TREE please use:
+
+Bui Quang Minh, Heiko A. Schmidt, Olga Chernomor, Dominik Schrempf,
+Michael D. Woodhams, Arndt von Haeseler, and Robert Lanfear (2020)
+IQ-TREE 2: New models and efficient methods for phylogenetic inference
+in the genomic era. Mol. Biol. Evol., in press.
+https://doi.org/10.1093/molbev/msaa015
+
+Since you used ultrafast bootstrap (UFBoot) please also cite: 
+
+Diep Thi Hoang, Olga Chernomor, Arndt von Haeseler, Bui Quang Minh,
+and Le Sy Vinh (2018) UFBoot2: Improving the ultrafast bootstrap
+approximation. Mol. Biol. Evol., 35:518–522.
+https://doi.org/10.1093/molbev/msx281
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 14 sequences with 37433 nucleotide sites
+Number of constant sites: 0 (= 0% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 0 (= 0% of all sites)
+Number of parsimony informative sites: 19051
+Number of distinct site patterns: 8678
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: GTR+F+ASC
+
+Rate parameter R:
+
+  A-C: 1.0652
+  A-G: 5.0782
+  A-T: 1.0705
+  C-G: 0.8403
+  C-T: 5.0732
+  G-T: 1.0000
+
+State frequencies: (empirical counts from alignment)
+
+  pi(A) = 0.2572
+  pi(C) = 0.2386
+  pi(G) = 0.2394
+  pi(T) = 0.2648
+
+Rate matrix Q:
+
+  A   -0.9929    0.1439    0.6885    0.1605
+  C    0.1551     -1.03    0.1139    0.7608
+  G    0.7396    0.1136    -1.003      0.15
+  T    0.1559    0.6856    0.1356   -0.9771
+
+Model of rate heterogeneity: Uniform
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -283241.0736 (s.e. 865.7702)
+Unconstrained log-likelihood (without tree): -245923.0568
+Number of free parameters (#branches + #model parameters): 33
+Akaike information criterion (AIC) score: 566548.1471
+Corrected Akaike information criterion (AICc) score: 566548.2071
+Bayesian information criterion (BIC) score: 566829.6473
+
+Total tree length (sum of branch lengths): 1.8048
+Sum of internal branch lengths: 0.4578 (25.3654% of tree length)
+
+NOTE: Tree is UNROOTED although outgroup taxon 'CM3262' is drawn at root
+Numbers in parentheses are SH-aLRT support (%) / ultrafast bootstrap support (%)
+
++----CM3262
+|
+|        +----CM4946
+|     +--| (100/100)
+|     |  |        +--CM2733
+|     |  |     +--| (100/100)
+|     |  |     |  +-----CM4602
+|     |  |  +--| (100/100)
+|     |  |  |  +--CM2730
+|     |  +--| (100/100)
+|     |     +---CM3720
+|  +--| (100/99)
+|  |  |  +---F15927
+|  |  +--| (100/100)
+|  |     +-----MO79587EXP
++--| (100/100)
+|  |          +--CM7560
+|  |  +-------| (100/100)
+|  |  |       +--CM2495
+|  +--| (100/100)
+|     |  +---------LMB-35Aa
+|     +--| (99.6/95)
+|        +----------------------------------------------------TP32
+|
+|      +--CM3249b
++------| (100/100)
+       +--CM3249
+
+Tree in newick format:
+
+(CM3262:0.0739540226,(((CM4946:0.0762076307,(((CM2733:0.0265278922,CM4602:0.0799327622)100/100:0.0267002701,CM2730:0.0403781481)100/100:0.0301179753,CM3720:0.0560571629)100/100:0.0360192534)100/100:0.0232142245,(F15927:0.0640106028,MO79587EXP:0.0863933703)100/100:0.0468431031)100/99:0.0152420911,((CM7560:0.0017529188,CM2495:0.0054649652)100/100:0.1067898821,(LMB-35Aa:0.1327106612,TP32:0.6925675310)99.6/95:0.0337753742)100/100:0.0236028436)100/100:0.0245023299,(CM3249b:0.0058449770,CM3249:0.0051833125)100/100:0.0909805728);
+
+CONSENSUS TREE
+--------------
+
+Consensus tree is constructed from 1000 bootstrap trees
+Log-likelihood of consensus tree: -283241.073574
+Robinson-Foulds distance between ML tree and consensus tree: 0
+
+Branches with support >0.000000% are kept (extended consensus)
+Branch lengths are optimized by maximum likelihood on original alignment
+Numbers in parentheses are bootstrap supports (%)
+
++----CM3262
+|
+|        +----CM4946
+|     +--| (100)
+|     |  |        +--CM2733
+|     |  |     +--| (100)
+|     |  |     |  +-----CM4602
+|     |  |  +--| (100)
+|     |  |  |  +--CM2730
+|     |  +--| (100)
+|     |     +---CM3720
+|  +--| (99)
+|  |  |  +---F15927
+|  |  +--| (100)
+|  |     +-----MO79587EXP
++--| (100)
+|  |          +--CM7560
+|  |  +-------| (100)
+|  |  |       +--CM2495
+|  +--| (100)
+|     |  +---------LMB-35Aa
+|     +--| (95)
+|        +----------------------------------------------------TP32
+|
+|      +--CM3249b
++------| (100)
+       +--CM3249
+
+
+Consensus tree in newick format: 
+
+(CM3262:0.0739552003,(((CM4946:0.0762104396,(((CM2733:0.0265284150,CM4602:0.0799362016)100:0.0267010596,CM2730:0.0403798882)100:0.0301180746,CM3720:0.0560599065)100:0.0360209129)100:0.0232142427,(F15927:0.0640127633,MO79587EXP:0.0863954676)100:0.0468442203)99:0.0152425875,((CM7560:0.0017529268,CM2495:0.0054656579)100:0.1067936332,(LMB-35Aa:0.1327232445,TP32:0.6925842993)95:0.0337637128)100:0.0236037563)100:0.0245033599,(CM3249b:0.0058457685,CM3249:0.0051830545)100:0.0909817286);
+
+TIME STAMP
+----------
+
+Date and time: Wed May  5 01:33:54 2021
+Total CPU time used: 77.545372 seconds (0h:1m:17s)
+Total wall-clock time used: 30.70341706 seconds (0h:0m:30s)
+
