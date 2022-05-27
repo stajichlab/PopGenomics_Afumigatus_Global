@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 #SBATCH -p batch -N 1 -n 8 --mem 24gb --out logs/assemble_unmapped.%a.log --time 24:00:00
 
-module load SPAdes/3.15.2
+module load SPAdes
 MEM=24
 UNMAPPEDASM=unmapped_asm
 UNMAPPED=unmapped

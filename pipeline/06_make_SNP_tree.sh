@@ -84,6 +84,5 @@ do
     fi
   done
 done
-exit
 parallel -j 2 fasttreerun ::: $(ls $TREEDIR/*.mfa)
 parallel -j 4 iqtreerun ::: $(ls $TREEDIR/*.mfa)
