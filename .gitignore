@@ -11,3 +11,5 @@
 *.pac
 logs/*.log
 logs/*.log.gz
+strain_tree/*.log
+*.ckp.gz
