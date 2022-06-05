@@ -4,11 +4,10 @@ module load bwa
 module load samtools
 module load picard
 module load gatk/4
-module load java/13
+module load java
+module load workspace/scratch
 
-MEM=128g
-
-TMPOUTDIR=tmp
+TMPOUTDIR=$SCRATCH
 
 if [ -f config.txt ]; then
   source config.txt
@@ -17,7 +16,7 @@ if [ -z $REFGENOME ]; then
   echo "NEED A REFGENOME - set in config.txt and make sure 00_index.sh is run"
   exit
 fi
-
+TEMP=$SCRATCH
 if [ ! -f $REFGENOME.dict ]; then
   echo "NEED a $REFGENOME.dict - make sure 00_index.sh is run"
 fi
@@ -47,15 +46,15 @@ cat $SAMPFILE | sed -n ${N}p | while read STRAIN FILEBASE
 do
   PREFIX=$STRAIN
   FINALFILE=$ALNFOLDER/$STRAIN.$HTCEXT
+  echo "infile is $FILEBASE"
   echo "To process $PREFIX and $FINALFILE"
   if [ ! -s $FINALFILE ]; then
     BAMSTOMERGE=()
     for BASEPATTERN in $(echo $FILEBASE | perl -p -e 's/\;/,/g');
     do
-      BASE=$(basename $BASEPATTERN | perl -p -e 's/(\S+)\[12\].+/$1/g; s/_R?$//g;')
+      BASE=$(basename $BASEPATTERN | perl -p -e 's/(\S+)\[12\].+/$1/g; s/_R\?(_\d+)?\.(fastq|fq)(\.gz)?$//g;')
       # END THIS PART IS PROBABLY PROJECT SPECIFIC
-      echo "STRAIN is $STRAIN BASE is $BASE BASEPATTERN is $BASEPATTERN"
-
+      echo "STRAIN is $STRAIN BASE is $BASE BASEPATTERN is $BASEPATTERN"      
       TMPBAMFILE=$TEMP/$BASE.unsrt.bam
       SRTED=$TMPOUTDIR/$BASE.srt.bam
       DDFILE=$TMPOUTDIR/$BASE.DD.bam

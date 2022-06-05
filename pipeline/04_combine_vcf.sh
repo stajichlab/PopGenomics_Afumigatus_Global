@@ -1,10 +1,8 @@
-#!/usr/bin/bash
+#!/usr/bin/bash -l
 #SBATCH -p intel --mem 64gb -N 1 -n 4 --out logs/concat_vcf.log -p short
-
-module load cyvcf2
 module load bcftools
+module load cyvcf2
 module load yq
-
 CPU=1
 if [ $SLURM_CPUS_ON_NODE ]; then
     CPU=$SLURM_CPUS_ON_NODE

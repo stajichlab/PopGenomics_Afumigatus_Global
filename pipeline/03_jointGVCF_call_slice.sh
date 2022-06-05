@@ -1,13 +1,11 @@
-#!/usr/bin/bash
-#SBATCH --mem 24G --nodes 1 --ntasks 2 -J slice.GVCFGeno --out logs/GVCFGenoGATK4.slice_%a.%A.log  -p intel,batch -a 1-9
+#!/usr/bin/bash -l
+#SBATCH --mem 24G --nodes 1 --ntasks 2 -J slice.GVCFGeno --out logs/GVCFGenoGATK4.slice_%a.%A.log  -p batch -a 1-9
 #--time 48:00:00
 hostname
 MEM=24g
-module unload R/4.0.1
-module unload java
+module load java
 module load picard
 module load gatk/4
-module load java/13
 module load bcftools
 module load parallel
 module load yq
