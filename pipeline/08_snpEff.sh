@@ -1,10 +1,7 @@
-#!/usr/bin/bash
+#!/usr/bin/bash -l
 #SBATCH --mem=64G -p batch --nodes 1 --ntasks 8 --out logs/snpEff.log
-module unload miniconda2
-module load miniconda3
 module load snpEff
-module load bcftools/1.11
-module load tabix
+module load bcftools
 module load yq
 
 # THIS IS AN EXAMPLE OF HOW TO MAKE SNPEFF - it is for A.fumigatus
@@ -101,10 +98,11 @@ makeMatrix() {
 
   # this requires python3 and vcf script
   # this assumes the interpro domains were downloaded from FungiDB and their format - you will need to generalize this
-  $TOPFOLDER/scripts/map_snpEff2domains.py --vcf $OUTVCF --domains $DOMAINS --output $DOMAINVAR
-
+  python3 $TOPFOLDER/scripts/map_snpEff2domains.py --vcf $OUTVCF --domains $DOMAINS --output $DOMAINVAR
+  module load pyvcf
   # this requires Python and the vcf library to be installed
-  $TOPFOLDER/scripts/snpEff_2_tab.py $OUTVCF $REFGENOME > $OUTMATRIX
+  python3 $TOPFOLDER/scripts/snpEff_2_tab.py $OUTVCF $REFGENOME > $OUTMATRIX
+  module unload pyvcf
   popd
 }
 source $(which env_parallel.bash)

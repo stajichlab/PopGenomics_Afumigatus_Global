@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -l
 #SBATCH -N 1 -n 16 --mem 32gb --out logs/bwa.%a.log --time 8:00:00
 module load bwa
 module load samtools

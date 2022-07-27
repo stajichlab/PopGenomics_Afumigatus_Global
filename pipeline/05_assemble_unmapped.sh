@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/bash -l
 #SBATCH -p batch -N 1 -n 8 --mem 24gb --out logs/assemble_unmapped.%a.log --time 24:00:00
 
 module load spades

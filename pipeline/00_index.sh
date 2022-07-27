@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/bash -l
 module load samtools/1.12
 module load bwa/0.7.17
 if [ -f config.txt ]; then
