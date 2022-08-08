@@ -1,0 +1,190 @@
+IQ-TREE 2.1.1 COVID-edition built Aug 22 2020
+
+Input file name: strain_tree/Afum_global_v4.DAPC_Clade_3.SNP.mfa
+Type of analysis: tree reconstruction + ultrafast bootstrap (1000 replicates)
+Random seed number: 497811
+
+REFERENCES
+----------
+
+To cite IQ-TREE please use:
+
+Bui Quang Minh, Heiko A. Schmidt, Olga Chernomor, Dominik Schrempf,
+Michael D. Woodhams, Arndt von Haeseler, and Robert Lanfear (2020)
+IQ-TREE 2: New models and efficient methods for phylogenetic inference
+in the genomic era. Mol. Biol. Evol., in press.
+https://doi.org/10.1093/molbev/msaa015
+
+Since you used ultrafast bootstrap (UFBoot) please also cite: 
+
+Diep Thi Hoang, Olga Chernomor, Arndt von Haeseler, Bui Quang Minh,
+and Le Sy Vinh (2018) UFBoot2: Improving the ultrafast bootstrap
+approximation. Mol. Biol. Evol., 35:518–522.
+https://doi.org/10.1093/molbev/msx281
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 21 sequences with 165305 nucleotide sites
+Number of constant sites: 0 (= 0% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 0 (= 0% of all sites)
+Number of parsimony informative sites: 162130
+Number of distinct site patterns: 12717
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: GTR+F+ASC
+
+Rate parameter R:
+
+  A-C: 1.0021
+  A-G: 5.5106
+  A-T: 1.0371
+  C-G: 0.7750
+  C-T: 5.4692
+  G-T: 1.0000
+
+State frequencies: (empirical counts from alignment)
+
+  pi(A) = 0.2484
+  pi(C) = 0.2523
+  pi(G) = 0.2503
+  pi(T) = 0.2489
+
+Rate matrix Q:
+
+  A    -1.022    0.1367    0.7461    0.1396
+  C    0.1347    -0.976    0.1049    0.7364
+  G    0.7405    0.1058   -0.9809    0.1346
+  T    0.1394    0.7463    0.1354    -1.021
+
+Model of rate heterogeneity: Uniform
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -1115212.5781 (s.e. 2137.7296)
+Unconstrained log-likelihood (without tree): -885998.8491
+Number of free parameters (#branches + #model parameters): 47
+Akaike information criterion (AIC) score: 2230519.1561
+Corrected Akaike information criterion (AICc) score: 2230519.1834
+Bayesian information criterion (BIC) score: 2230989.8869
+
+Total tree length (sum of branch lengths): 1.4484
+Sum of internal branch lengths: 1.1701 (80.7859% of tree length)
+
+NOTE: Tree is UNROOTED although outgroup taxon 'Af47_10' is drawn at root
+Numbers in parentheses are SH-aLRT support (%) / ultrafast bootstrap support (%)
+
++--Af47_10
+|
+|                                                               +--CM2495
+|                                                            +--| (100/100)
+|                                                            |  +--CM7560
+|                                                         +--| (100/100)
+|                                                         |  |           +--CM3720
+|                                                         |  |        +--| (100/100)
+|                                                         |  |        |  |  +--CM2730
+|                                                         |  |        |  +--| (100/100)
+|                                                         |  |        |     |  +--CM2733
+|                                                         |  |        |     +--| (100/100)
+|                                                         |  |        |        +--CM4602
+|                                                         |  |     +--| (100/100)
+|                                                         |  |     |  +--CM4946
+|                                                         |  |  +--| (49.9/64)
+|                                                         |  |  |  |  +--MO79587EXP
+|                                                         |  |  |  +--| (100/100)
+|                                                         |  |  |     +--F15927
+|                                                         |  +--| (100/100)
+|                                                         |     |     +--CM3249b
+|                                                         |     |  +--| (100/100)
+|                                                         |     |  |  +--CM3249
+|                                                         |     +--| (100/100)
+|                                                         |        +--CM3262
+|                                                    +----| (100/100)
+|                                                    |    +--LMB-35Aa
+|     +----------------------------------------------| (100/100)
+|     |                                              +**TP32
+|  +--| (100/100)
+|  |  |            +--ATCC_13073
+|  |  |         +--| (100/100)
+|  |  |         |  +--B5233
+|  |  |  +------| (100/100)
+|  |  |  |      +--D141
+|  |  +--| (100/100)
+|  |     +--ATCC_42202
++--| (100/100)
+|  +--H237
+|
++--Af47_4
+
+Tree in newick format:
+
+(Af47_10:0.0290576984,((((((CM2495:0.0049633966,CM7560:0.0019974330)100/100:0.0264371730,((((CM3720:0.0113016365,(CM2730:0.0074475923,(CM2733:0.0061781099,CM4602:0.0167333127)100/100:0.0064858859)100/100:0.0065007695)100/100:0.0075369066,CM4946:0.0145992249)100/100:0.0048291209,(MO79587EXP:0.0197702809,F15927:0.0130631374)100/100:0.0089608403)49.9/64:0.0030627244,((CM3249b:0.0032721061,CM3249:0.0031118146)100/100:0.0132373931,CM3262:0.0145379787)100/100:0.0055256094)100/100:0.0055174445)100/100:0.0092439805,LMB-35Aa:0.0264415066)100/100:0.0954686755,TP32:0.0000016580)100/100:0.7612248723,(((ATCC_13073:0.0015637752,B5233:0.0051431862)100/100:0.0156764067,D141:0.0152021293)100/100:0.1252483686,ATCC_42202:0.0355021009)100/100:0.0260996499)100/100:0.0312899167,H237:0.0308900964)100/100:0.0177396461,Af47_4:0.0175143646);
+
+CONSENSUS TREE
+--------------
+
+Consensus tree is constructed from 1000 bootstrap trees
+Log-likelihood of consensus tree: -1115212.55540024
+Robinson-Foulds distance between ML tree and consensus tree: 0
+
+Branches with support >0.00000000% are kept (extended consensus)
+Branch lengths are optimized by maximum likelihood on original alignment
+Numbers in parentheses are bootstrap supports (%)
+
++--Af47_10
+|
+|                                                               +--CM2495
+|                                                            +--| (100)
+|                                                            |  +--CM7560
+|                                                         +--| (100)
+|                                                         |  |           +--CM3720
+|                                                         |  |        +--| (100)
+|                                                         |  |        |  |  +--CM2730
+|                                                         |  |        |  +--| (100)
+|                                                         |  |        |     |  +--CM2733
+|                                                         |  |        |     +--| (100)
+|                                                         |  |        |        +--CM4602
+|                                                         |  |     +--| (100)
+|                                                         |  |     |  +--CM4946
+|                                                         |  |  +--| (64)
+|                                                         |  |  |  |  +--MO79587EXP
+|                                                         |  |  |  +--| (100)
+|                                                         |  |  |     +--F15927
+|                                                         |  +--| (100)
+|                                                         |     |     +--CM3249b
+|                                                         |     |  +--| (100)
+|                                                         |     |  |  +--CM3249
+|                                                         |     +--| (100)
+|                                                         |        +--CM3262
+|                                                    +----| (100)
+|                                                    |    +--LMB-35Aa
+|     +----------------------------------------------| (100)
+|     |                                              +**TP32
+|  +--| (100)
+|  |  |            +--ATCC_13073
+|  |  |         +--| (100)
+|  |  |         |  +--B5233
+|  |  |  +------| (100)
+|  |  |  |      +--D141
+|  |  +--| (100)
+|  |     +--ATCC_42202
++--| (100)
+|  +--H237
+|
++--Af47_4
+
+
+Consensus tree in newick format: 
+
+(Af47_10:0.0290580474,((((((CM2495:0.0049636994,CM7560:0.0019973847)100:0.0264368844,((((CM3720:0.0113016896,(CM2730:0.0074478076,(CM2733:0.0061776744,CM4602:0.0167335054)100:0.0064856223)100:0.0065003809)100:0.0075365181,CM4946:0.0145993930)100:0.0048290337,(MO79587EXP:0.0197701635,F15927:0.0130633218)100:0.0089608619)64:0.0030630399,((CM3249b:0.0032718983,CM3249:0.0031126017)100:0.0132373791,CM3262:0.0145376205)100:0.0055254865)100:0.0055175491)100:0.0092440248,LMB-35Aa:0.0264411099)100:0.0954706979,TP32:0.0000012550)100:0.7612271680,(((ATCC_13073:0.0015640754,B5233:0.0051433509)100:0.0156765034,D141:0.0152025625)100:0.1252482140,ATCC_42202:0.0355029630)100:0.0261023286)100:0.0312853951,H237:0.0308902589)100:0.0177400968,Af47_4:0.0175145491);
+
+TIME STAMP
+----------
+
+Date and time: Wed Jun  1 23:07:55 2022
+Total CPU time used: 267.934244 seconds (0h:4m:27s)
+Total wall-clock time used: 78.52418399 seconds (0h:1m:18s)
+
