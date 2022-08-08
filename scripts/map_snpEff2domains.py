@@ -85,6 +85,7 @@ for record in vcf_reader:
                      dnachg,pepchg))
 
     arrayout.extend((record.REF,record.ALT))
+    pepchg = re.sub('\?','',pepchg)
     pepn = re.match(r'^(\w{2,3}|\*)(\d+)(\w{2,3}|\*)',pepchg)
     mut_aa = None
     if pepn:

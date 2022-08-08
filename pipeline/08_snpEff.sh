@@ -1,6 +1,6 @@
 #!/usr/bin/bash -l
 #SBATCH --mem=64G -p batch --nodes 1 --ntasks 8 --out logs/snpEff.log
-module load snpEff
+module load snpEff/4.3t
 module load bcftools
 module load yq
 
@@ -19,6 +19,7 @@ if [ -f config.txt ]; then
   source config.txt
 fi
 DOMAINS=$TOPFOLDER/genome/$(basename ${GFFGENOME} .gff)_InterproDomains.txt
+PROTEINS=$TOPFOLDER/genome/$(basename ${GFFGENOME} .gff)_AnnotatedProteins.fasta
 GFFGENOMEFILE=$GENOMEFOLDER/$GFFGENOME
 FASTAGENOMEFILE=$GENOMEFOLDER/$GENOMEFASTA
 if [ -z $SNPEFFJAR ]; then
@@ -57,6 +58,8 @@ if [ ! -e $SNPEFFOUT/$snpEffConfig ]; then
   gzip -c $GFFGENOMEFILE > $SNPEFFOUT/data/$SNPEFFGENOME/genes.gff.gz
   rsync -aL $REFGENOME $SNPEFFOUT/data/$SNPEFFGENOME/sequences.fa
 
+  #rsync -aL $PROTEINS $SNPEFFOUT/data/$SNPEFFGENOME/protein.fa
+
   java -Xmx$MEM -jar $SNPEFFJAR build -datadir $TOPFOLDER/$SNPEFFOUT/data -c $TOPFOLDER/$SNPEFFOUT/$snpEffConfig -gff3 -v $SNPEFFGENOME
 fi
 # get full path to YAML file
@@ -64,6 +67,7 @@ POPYAML=$(realpath $POPYAML)
 REFGENOME=$(realpath $REFGENOME)
 pushd $SNPEFFOUT
 
+module load pyvcf
 makeMatrix() {
   POPNAME=$1
   echo "POPNAME is $POPNAME"
@@ -91,18 +95,15 @@ makeMatrix() {
   if [[ ! -s $INVCF || $TOPFOLDER/$FINALVCF/$PREFIX.$POPNAME.SNP.combined_selected.vcf.gz -nt $INVCF ]]; then
     bcftools concat -a -d both -o $INVCF -O v $COMBVCF
   fi
-  echo " java -Xmx$MEM -jar $SNPEFFJAR eff -c $TOPFOLDER/$SNPEFFOUT/$snpEffConfig -dataDir $TOPFOLDER/$SNPEFFOUT/data -v $SNPEFFGENOME $INVCF > $OUTVCF"
   java -Xmx$MEM -jar $SNPEFFJAR eff -c $TOPFOLDER/$SNPEFFOUT/$snpEffConfig -dataDir $TOPFOLDER/$SNPEFFOUT/data -v $SNPEFFGENOME $INVCF > $OUTVCF
 
   bcftools query -H -f '%CHROM\t%POS\t%REF\t%ALT{0}[\t%TGT]\t%INFO/ANN\n' $OUTVCF > $OUTTAB
 
   # this requires python3 and vcf script
   # this assumes the interpro domains were downloaded from FungiDB and their format - you will need to generalize this
-  python3 $TOPFOLDER/scripts/map_snpEff2domains.py --vcf $OUTVCF --domains $DOMAINS --output $DOMAINVAR
-  module load pyvcf
+  #python3 $TOPFOLDER/scripts/map_snpEff2domains.py --vcf $OUTVCF --domains $DOMAINS --output $DOMAINVAR
   # this requires Python and the vcf library to be installed
   python3 $TOPFOLDER/scripts/snpEff_2_tab.py $OUTVCF $REFGENOME > $OUTMATRIX
-  module unload pyvcf
   popd
 }
 source $(which env_parallel.bash)
