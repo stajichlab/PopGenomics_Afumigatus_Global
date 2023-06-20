@@ -542,3 +542,15 @@ ATCC_42202,MIGS_220222/ATCC42202_S51_R?_001.fastq.gz
 B5233,MIGS_220222/B5233_S48_R?_001.fastq.gz
 D141,MIGS_220222/D141_S47_R?_001.fastq.gz
 H237,MIGS_220222/H237_S50_R?_001.fastq.gz
+CEA10_CramerSM,Cramer_SM/CEA10_S29_R?_001.fastq.gz
+SM12_R10,Cramer_SM/SM12_R10_S40_R?_001.fastq.gz
+SM12_R2,Cramer_SM/SM12_R2_S35_R?_001.fastq.gz
+SM12_R3,Cramer_SM/SM12_R3_S36_R?_001.fastq.gz
+SM12_R4,Cramer_SM/SM12_R4_S37_R?_001.fastq.gz
+SM12_R6,Cramer_SM/SM12_R6_S38_R?_001.fastq.gz
+SM12_R7,Cramer_SM/SM12_R7_S39_R?_001.fastq.gz
+SM6_R1,Cramer_SM/SM6_R1_S30_R?_001.fastq.gz
+SM6_R2,Cramer_SM/SM6_R2_S31_R?_001.fastq.gz
+SM6_R3,Cramer_SM/SM6_R3_S32_R?_001.fastq.gz
+SM6_R4,Cramer_SM/SM6_R4_S33_R?_001.fastq.gz
+SM6_R6,Cramer_SM/SM6_R6_S34_R?_001.fastq.gz
