@@ -1,0 +1,178 @@
+IQ-TREE 2.1.1 COVID-edition built Aug 22 2020
+
+Input file name: strain_tree/Afum_global_v4.CladeRef.SNP.mfa
+Type of analysis: tree reconstruction + ultrafast bootstrap (1000 replicates)
+Random seed number: 689288
+
+REFERENCES
+----------
+
+To cite IQ-TREE please use:
+
+Bui Quang Minh, Heiko A. Schmidt, Olga Chernomor, Dominik Schrempf,
+Michael D. Woodhams, Arndt von Haeseler, and Robert Lanfear (2020)
+IQ-TREE 2: New models and efficient methods for phylogenetic inference
+in the genomic era. Mol. Biol. Evol., in press.
+https://doi.org/10.1093/molbev/msaa015
+
+Since you used ultrafast bootstrap (UFBoot) please also cite: 
+
+Diep Thi Hoang, Olga Chernomor, Arndt von Haeseler, Bui Quang Minh,
+and Le Sy Vinh (2018) UFBoot2: Improving the ultrafast bootstrap
+approximation. Mol. Biol. Evol., 35:518–522.
+https://doi.org/10.1093/molbev/msx281
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 18 sequences with 135961 nucleotide sites
+Number of constant sites: 0 (= 0% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 0 (= 0% of all sites)
+Number of parsimony informative sites: 131539
+Number of distinct site patterns: 15723
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: GTR+F+ASC
+
+Rate parameter R:
+
+  A-C: 0.9841
+  A-G: 5.6588
+  A-T: 1.0334
+  C-G: 0.7606
+  C-T: 5.6574
+  G-T: 1.0000
+
+State frequencies: (empirical counts from alignment)
+
+  pi(A) = 0.2422
+  pi(C) = 0.2593
+  pi(G) = 0.2573
+  pi(T) = 0.2412
+
+Rate matrix Q:
+
+  A    -1.041    0.1355    0.7734    0.1324
+  C    0.1266   -0.9553     0.104    0.7248
+  G    0.7278    0.1047   -0.9606    0.1281
+  T    0.1329     0.779    0.1367    -1.049
+
+Model of rate heterogeneity: Uniform
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -1130580.5480 (s.e. 1677.4300)
+Unconstrained log-likelihood (without tree): -913312.9888
+Number of free parameters (#branches + #model parameters): 41
+Akaike information criterion (AIC) score: 2261243.0961
+Corrected Akaike information criterion (AICc) score: 2261243.1214
+Bayesian information criterion (BIC) score: 2261645.7212
+
+Total tree length (sum of branch lengths): 1.6048
+Sum of internal branch lengths: 1.0824 (67.4491% of tree length)
+
+NOTE: Tree is UNROOTED although outgroup taxon 'AF100-10_5' is drawn at root
+Numbers in parentheses are SH-aLRT support (%) / ultrafast bootstrap support (%)
+
++--AF100-10_5
+|
+|                                                            +--CM4946
+|                                                      +-----| (100/100)
+|                                                      |     +--W72310
+|                     +--------------------------------| (100/100)
+|                     |                                +--TP32
+|            +--------| (100/100)
+|            |        +--Afischeri
+|        +---| (100/100)
+|        |   +---AF293
+|     +--| (100/69)
+|     |  +---ATCC_42202
+|  +--| (100/100)
+|  |  |             +--ATCC_13073
+|  |  |          +--| (100/100)
+|  |  |          |  +--B5233
+|  |  |       +--| (100/100)
+|  |  |       |  |  +--F16216
+|  |  |       |  +--| (100/100)
+|  |  |       |     +--D141
+|  |  |   +---| (100/100)
+|  |  |   |   +--AF210
+|  |  +---| (100/100)
+|  |      +---RSF2S8
++--| (100/100)
+|  |  +--AF106-6_5
+|  +--| (100/100)
+|     |     +--CEA10
+|     |  +--| (100/100)
+|     |  |  +--Af47_4
+|     +--| (100/69)
+|        +--Af47_10
+|
++--H237
+
+Tree in newick format:
+
+(AF100-10_5:0.0473684723,(((((((CM4946:0.0090785661,W72310:0.0123077098)100/100:0.0894762799,TP32:0.0014009094)100/100:0.4578318526,Afischeri:0.0036231525)100/100:0.1347061044,AF293:0.0629522079)100/100:0.0569098115,ATCC_42202:0.0589541258)100/69:0.0222107210,((((ATCC_13073:0.0028385626,B5233:0.0084070139)100/100:0.0337417307,(F16216:0.0186199182,D141:0.0198296125)100/100:0.0181473617)100/100:0.0142485322,AF210:0.0314567661)100/100:0.0628956128,RSF2S8:0.0625481246)100/100:0.0685848309)100/100:0.0245746654,(AF106-6_5:0.0364229349,((CEA10:0.0318972792,Af47_4:0.0301141169)100/100:0.0218587660,Af47_10:0.0407786612)100/69:0.0180168345)100/100:0.0297679973)100/100:0.0294332903,H237:0.0437688893);
+
+CONSENSUS TREE
+--------------
+
+Consensus tree is constructed from 1000 bootstrap trees
+Log-likelihood of consensus tree: -1130580.54806454
+Robinson-Foulds distance between ML tree and consensus tree: 0
+
+Branches with support >0.00000000% are kept (extended consensus)
+Branch lengths are optimized by maximum likelihood on original alignment
+Numbers in parentheses are bootstrap supports (%)
+
++--AF100-10_5
+|
+|                                                            +--CM4946
+|                                                      +-----| (100)
+|                                                      |     +--W72310
+|                     +--------------------------------| (100)
+|                     |                                +--TP32
+|            +--------| (100)
+|            |        +--Afischeri
+|        +---| (100)
+|        |   +---AF293
+|     +--| (69)
+|     |  +---ATCC_42202
+|  +--| (100)
+|  |  |             +--ATCC_13073
+|  |  |          +--| (100)
+|  |  |          |  +--B5233
+|  |  |       +--| (100)
+|  |  |       |  |  +--F16216
+|  |  |       |  +--| (100)
+|  |  |       |     +--D141
+|  |  |   +---| (100)
+|  |  |   |   +--AF210
+|  |  +---| (100)
+|  |      +---RSF2S8
++--| (100)
+|  |  +--AF106-6_5
+|  +--| (100)
+|     |     +--CEA10
+|     |  +--| (100)
+|     |  |  +--Af47_4
+|     +--| (69)
+|        +--Af47_10
+|
++--H237
+
+
+Consensus tree in newick format: 
+
+(AF100-10_5:0.0473689892,(((((((CM4946:0.0090782658,W72310:0.0123080234)100:0.0894780418,TP32:0.0013998782)100:0.4578453790,Afischeri:0.0036210865)100:0.1347092718,AF293:0.0629526289)100:0.0569108700,ATCC_42202:0.0589550225)69:0.0222118478,((((ATCC_13073:0.0028385048,B5233:0.0084071481)100:0.0337422717,(F16216:0.0186202952,D141:0.0198300162)100:0.0181471787)100:0.0142484517,AF210:0.0314573046)100:0.0628967588,RSF2S8:0.0625490678)100:0.0685851053)100:0.0245750606,(AF106-6_5:0.0364233809,((CEA10:0.0318977310,Af47_4:0.0301147460)100:0.0218589764,Af47_10:0.0407790725)69:0.0180179129)100:0.0297686810)100:0.0294337997,H237:0.0437696484);
+
+TIME STAMP
+----------
+
+Date and time: Wed Jun  1 23:06:33 2022
+Total CPU time used: 220.063422 seconds (0h:3m:40s)
+Total wall-clock time used: 86.76486397 seconds (0h:1m:26s)
+
