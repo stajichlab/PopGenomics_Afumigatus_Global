@@ -1,8 +1,8 @@
-IQ-TREE 2.1.1 COVID-edition built Aug 22 2020
+IQ-TREE 2.2.0.5 COVID-edition built Jul 18 2022
 
 Input file name: strain_tree/Afum_global_v4.CladeRef.SNP.mfa
 Type of analysis: tree reconstruction + ultrafast bootstrap (1000 replicates)
-Random seed number: 689288
+Random seed number: 683207
 
 REFERENCES
 ----------
@@ -25,11 +25,11 @@ https://doi.org/10.1093/molbev/msx281
 SEQUENCE ALIGNMENT
 ------------------
 
-Input data: 18 sequences with 135961 nucleotide sites
+Input data: 19 sequences with 135961 nucleotide sites
 Number of constant sites: 0 (= 0% of all sites)
 Number of invariant (constant or ambiguous constant) sites: 0 (= 0% of all sites)
-Number of parsimony informative sites: 131539
-Number of distinct site patterns: 15723
+Number of parsimony informative sites: 135961
+Number of distinct site patterns: 15771
 
 SUBSTITUTION PROCESS
 --------------------
@@ -38,141 +38,145 @@ Model of substitution: GTR+F+ASC
 
 Rate parameter R:
 
-  A-C: 0.9841
-  A-G: 5.6588
-  A-T: 1.0334
-  C-G: 0.7606
-  C-T: 5.6574
+  A-C: 0.9836
+  A-G: 5.6595
+  A-T: 1.0316
+  C-G: 0.7617
+  C-T: 5.6585
   G-T: 1.0000
 
 State frequencies: (empirical counts from alignment)
 
-  pi(A) = 0.2422
-  pi(C) = 0.2593
-  pi(G) = 0.2573
-  pi(T) = 0.2412
+  pi(A) = 0.2424
+  pi(C) = 0.2591
+  pi(G) = 0.257
+  pi(T) = 0.2414
 
 Rate matrix Q:
 
-  A    -1.041    0.1355    0.7734    0.1324
-  C    0.1266   -0.9553     0.104    0.7248
-  G    0.7278    0.1047   -0.9606    0.1281
-  T    0.1329     0.779    0.1367    -1.049
+  A     -1.04    0.1353    0.7724    0.1323
+  C    0.1266   -0.9561     0.104    0.7255
+  G    0.7286    0.1048   -0.9616    0.1282
+  T    0.1328    0.7785    0.1365    -1.048
 
 Model of rate heterogeneity: Uniform
 
 MAXIMUM LIKELIHOOD TREE
 -----------------------
 
-Log-likelihood of the tree: -1130580.5480 (s.e. 1677.4300)
-Unconstrained log-likelihood (without tree): -913312.9888
-Number of free parameters (#branches + #model parameters): 41
-Akaike information criterion (AIC) score: 2261243.0961
-Corrected Akaike information criterion (AICc) score: 2261243.1214
-Bayesian information criterion (BIC) score: 2261645.7212
+Log-likelihood of the tree: -1132090.9316 (s.e. 1684.7787)
+Unconstrained log-likelihood (without tree): -913501.3901
+Number of free parameters (#branches + #model parameters): 43
+Akaike information criterion (AIC) score: 2264267.8632
+Corrected Akaike information criterion (AICc) score: 2264267.8910
+Bayesian information criterion (BIC) score: 2264690.1285
 
-Total tree length (sum of branch lengths): 1.6048
-Sum of internal branch lengths: 1.0824 (67.4491% of tree length)
+Total tree length (sum of branch lengths): 1.6061
+Sum of internal branch lengths: 1.1456 (71.3251% of tree length)
 
-NOTE: Tree is UNROOTED although outgroup taxon 'AF100-10_5' is drawn at root
+NOTE: Tree is UNROOTED although outgroup taxon 'Af293_REF' is drawn at root
 Numbers in parentheses are SH-aLRT support (%) / ultrafast bootstrap support (%)
 
-+--AF100-10_5
++--Af293_REF
 |
-|                                                            +--CM4946
-|                                                      +-----| (100/100)
-|                                                      |     +--W72310
-|                     +--------------------------------| (100/100)
-|                     |                                +--TP32
-|            +--------| (100/100)
-|            |        +--Afischeri
-|        +---| (100/100)
-|        |   +---AF293
-|     +--| (100/69)
-|     |  +---ATCC_42202
-|  +--| (100/100)
-|  |  |             +--ATCC_13073
-|  |  |          +--| (100/100)
-|  |  |          |  +--B5233
-|  |  |       +--| (100/100)
-|  |  |       |  |  +--F16216
-|  |  |       |  +--| (100/100)
-|  |  |       |     +--D141
-|  |  |   +---| (100/100)
-|  |  |   |   +--AF210
-|  |  +---| (100/100)
-|  |      +---RSF2S8
-+--| (100/100)
-|  |  +--AF106-6_5
-|  +--| (100/100)
-|     |     +--CEA10
-|     |  +--| (100/100)
-|     |  |  +--Af47_4
-|     +--| (100/69)
-|        +--Af47_10
+|                +--AF106-6_5
+|             +--| (100/100)
+|             |  |  +--Af47_10
+|             |  +--| (100/71)
+|             |     |  +--Af47_4
+|             |     +--| (100/100)
+|             |        +--CEA10
+|          +--| (100/100)
+|          |  |  +--AF100-10_5
+|          |  +--| (100/100)
+|          |     +--H237
+|       +--| (100/71)
+|       |  |        +--AF210
+|       |  |    +---| (100/100)
+|       |  |    |   |     +--ATCC_13073
+|       |  |    |   |  +--| (100/100)
+|       |  |    |   |  |  +--B5233
+|       |  |    |   +--| (100/100)
+|       |  |    |      |  +--D141
+|       |  |    |      +--| (100/100)
+|       |  |    |         +--F16216
+|       |  +----| (100/100)
+|       |       +---RSF2S8
+|   +---| (100/100)
+|   |   +---ATCC_42202
++---| (100/100)
+|   |         +--Afischeri
+|   +---------| (100/100)
+|             |                                          +--CM4946
+|             |                                   +------| (100/100)
+|             |                                   |      +--W72310
+|             +-----------------------------------| (100/100)
+|                                                 +--TP32
 |
-+--H237
++--AF293
 
 Tree in newick format:
 
-(AF100-10_5:0.0473684723,(((((((CM4946:0.0090785661,W72310:0.0123077098)100/100:0.0894762799,TP32:0.0014009094)100/100:0.4578318526,Afischeri:0.0036231525)100/100:0.1347061044,AF293:0.0629522079)100/100:0.0569098115,ATCC_42202:0.0589541258)100/69:0.0222107210,((((ATCC_13073:0.0028385626,B5233:0.0084070139)100/100:0.0337417307,(F16216:0.0186199182,D141:0.0198296125)100/100:0.0181473617)100/100:0.0142485322,AF210:0.0314567661)100/100:0.0628956128,RSF2S8:0.0625481246)100/100:0.0685848309)100/100:0.0245746654,(AF106-6_5:0.0364229349,((CEA10:0.0318972792,Af47_4:0.0301141169)100/100:0.0218587660,Af47_10:0.0407786612)100/69:0.0180168345)100/100:0.0297679973)100/100:0.0294332903,H237:0.0437688893);
+(Af293_REF:0.0001544899,(((((AF106-6_5:0.0364164555,(Af47_10:0.0407866566,(Af47_4:0.0301351845,CEA10:0.0319007731)100/100:0.0218730833)100/71:0.0180450096)100/100:0.0297954519,(AF100-10_5:0.0473634028,H237:0.0438110449)100/100:0.0294426328)100/100:0.0245909541,((AF210:0.0314239754,((ATCC_13073:0.0028408723,B5233:0.0084089697)100/100:0.0337553050,(D141:0.0198369698,F16216:0.0186276903)100/100:0.0181565825)100/100:0.0142908913)100/100:0.0629325208,RSF2S8:0.0625695239)100/100:0.0685823354)100/71:0.0222643861,ATCC_42202:0.0589559994)100/100:0.0574690274,(Afischeri:0.0034360396,((CM4946:0.0090818298,W72310:0.0123128311)100/100:0.0894915165,TP32:0.0014214145)100/100:0.4582640190)100/100:0.1341997565)100/100:0.0624028677,AF293:0.0010658204);
 
 CONSENSUS TREE
 --------------
 
 Consensus tree is constructed from 1000 bootstrap trees
-Log-likelihood of consensus tree: -1130580.54806454
+Log-likelihood of consensus tree: -1132090.93164289
 Robinson-Foulds distance between ML tree and consensus tree: 0
 
 Branches with support >0.00000000% are kept (extended consensus)
 Branch lengths are optimized by maximum likelihood on original alignment
 Numbers in parentheses are bootstrap supports (%)
 
-+--AF100-10_5
++--Af293_REF
 |
-|                                                            +--CM4946
-|                                                      +-----| (100)
-|                                                      |     +--W72310
-|                     +--------------------------------| (100)
-|                     |                                +--TP32
-|            +--------| (100)
-|            |        +--Afischeri
-|        +---| (100)
-|        |   +---AF293
-|     +--| (69)
-|     |  +---ATCC_42202
-|  +--| (100)
-|  |  |             +--ATCC_13073
-|  |  |          +--| (100)
-|  |  |          |  +--B5233
-|  |  |       +--| (100)
-|  |  |       |  |  +--F16216
-|  |  |       |  +--| (100)
-|  |  |       |     +--D141
-|  |  |   +---| (100)
-|  |  |   |   +--AF210
-|  |  +---| (100)
-|  |      +---RSF2S8
-+--| (100)
-|  |  +--AF106-6_5
-|  +--| (100)
-|     |     +--CEA10
-|     |  +--| (100)
-|     |  |  +--Af47_4
-|     +--| (69)
-|        +--Af47_10
+|                +--AF106-6_5
+|             +--| (100)
+|             |  |  +--Af47_10
+|             |  +--| (71)
+|             |     |  +--Af47_4
+|             |     +--| (100)
+|             |        +--CEA10
+|          +--| (100)
+|          |  |  +--AF100-10_5
+|          |  +--| (100)
+|          |     +--H237
+|       +--| (71)
+|       |  |        +--AF210
+|       |  |    +---| (100)
+|       |  |    |   |     +--ATCC_13073
+|       |  |    |   |  +--| (100)
+|       |  |    |   |  |  +--B5233
+|       |  |    |   +--| (100)
+|       |  |    |      |  +--D141
+|       |  |    |      +--| (100)
+|       |  |    |         +--F16216
+|       |  +----| (100)
+|       |       +---RSF2S8
+|   +---| (100)
+|   |   +---ATCC_42202
++---| (100)
+|   |         +--Afischeri
+|   +---------| (100)
+|             |                                          +--CM4946
+|             |                                   +------| (100)
+|             |                                   |      +--W72310
+|             +-----------------------------------| (100)
+|                                                 +--TP32
 |
-+--H237
++--AF293
 
 
 Consensus tree in newick format: 
 
-(AF100-10_5:0.0473689892,(((((((CM4946:0.0090782658,W72310:0.0123080234)100:0.0894780418,TP32:0.0013998782)100:0.4578453790,Afischeri:0.0036210865)100:0.1347092718,AF293:0.0629526289)100:0.0569108700,ATCC_42202:0.0589550225)69:0.0222118478,((((ATCC_13073:0.0028385048,B5233:0.0084071481)100:0.0337422717,(F16216:0.0186202952,D141:0.0198300162)100:0.0181471787)100:0.0142484517,AF210:0.0314573046)100:0.0628967588,RSF2S8:0.0625490678)100:0.0685851053)100:0.0245750606,(AF106-6_5:0.0364233809,((CEA10:0.0318977310,Af47_4:0.0301147460)100:0.0218589764,Af47_10:0.0407790725)69:0.0180179129)100:0.0297686810)100:0.0294337997,H237:0.0437696484);
+(Af293_REF:0.0001532069,(((((AF106-6_5:0.0364170531,(Af47_10:0.0407866144,(Af47_4:0.0301354664,CEA10:0.0319009462)100:0.0218724801)71:0.0180454618)100:0.0297952457,(AF100-10_5:0.0473635326,H237:0.0438117035)100:0.0294427787)100:0.0245919957,((AF210:0.0314240567,((ATCC_13073:0.0028412302,B5233:0.0084090465)100:0.0337557871,(D141:0.0198376518,F16216:0.0186273305)100:0.0181565125)100:0.0142910221)100:0.0629321639,RSF2S8:0.0625708994)100:0.0685833250)71:0.0222634193,ATCC_42202:0.0589566113)100:0.0574711520,(Afischeri:0.0034365512,((CM4946:0.0090818678,W72310:0.0123122000)100:0.0894932089,TP32:0.0014205084)100:0.4582696710)100:0.1341936160)100:0.0624039033,AF293:0.0010665147);
 
 TIME STAMP
 ----------
 
-Date and time: Wed Jun  1 23:06:33 2022
-Total CPU time used: 220.063422 seconds (0h:3m:40s)
-Total wall-clock time used: 86.76486397 seconds (0h:1m:26s)
+Date and time: Mon Feb 20 20:38:11 2023
+Total CPU time used: 173.063472 seconds (0h:2m:53s)
+Total wall-clock time used: 95.98206518 seconds (0h:1m:35s)
 

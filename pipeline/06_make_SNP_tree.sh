@@ -77,7 +77,7 @@ do
 
       #rsync -a $vcf.tbi $vcftmp.tbi
       # no ref genome alleles
-      printf ">%s\n%s\n" $REFNAME $(bcftools query -f '%REF%' ${vcftmp}) > $FAS
+      printf ">%s\n%s\n" $REFNAME $(bcftools query -f '%REF' ${vcftmp}) > $FAS
       parallel -j $CPU print_fas ::: $(bcftools query -l ${vcf}) ::: $vcftmp >> $FAS
       perl -ip -e 'if(/^>/){s/[\(\)#]/_/g; s/_+/_/g } else {s/[\*.]/-/g }' $FAS
     fi
