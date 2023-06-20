@@ -1,3 +1,10 @@
+
+Aspergillus fumigatus population genomics
+=====
+
+Variant call pipeline relying on slurm for A. fumigatus
+
+# From the code template
 # PopGenomics template
 Template for Population Genomics variant calling in simple BASH + Slurm environment. Best use is to fork this as a template.
 
