@@ -105,11 +105,14 @@ do
 	fi
 
 	if [[ ! -f $SELECTSNP.gz || $STEM.$TYPE.vcf.gz -nt $SELECTSNP.gz ]]; then
+		START=$(date +%s)
 		bcftools view -e "QD < 2.0" $STEM.$TYPE.vcf.gz -Ou --threads  4 | 
 			bcftools view -e "MQ < 40.0" -Ou --threads 4 |
 			bcftools view -e "QUAL < 100" -Ou |
 			bcftools view -e "SOR > 4.0" -Ou | bcftools view -e "MQRankSum < -12.5" -Ou | bcftools view -e "ReadPosRankSum < -8.0" -Ou |
 			bcftools view -e "FS > 60.00" -Oz -o $SELECTSNP.gz
+	    END=$(date +%s)
+	    echo "Elapsed Time bcftools SELECTSNP $SELECTSNP: $(($end-$start)) seconds"
 	    tabix $FILTERSNP.gz
 	fi
 
