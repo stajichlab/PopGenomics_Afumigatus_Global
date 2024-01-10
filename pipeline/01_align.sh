@@ -76,9 +76,8 @@ do
             exit
           fi
         fi # SRTED file exists or was created by this block
-
-        time java -jar $PICARD MarkDuplicates I=$SRTED O=$DDFILE \
-          METRICS_FILE=logs/$STRAIN.dedup.metrics CREATE_INDEX=true VALIDATION_STRINGENCY=SILENT
+        time java -jar $PICARD MarkDuplicates -I $SRTED -O $DDFILE \
+          -METRICS_FILE logs/$STRAIN.dedup.metrics -CREATE_INDEX true -VALIDATION_STRINGENCY SILENT
         if [ -f $DDFILE ]; then
           rm -f $SRTED
         fi
