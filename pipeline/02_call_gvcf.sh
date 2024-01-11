@@ -1,5 +1,5 @@
 #!/usr/bin/bash -l
-#SBATCH -p intel -N 1 -n 16 --mem 32gb --out logs/make_gvcf.%a.log --time 48:00:00
+#SBATCH -N 1 -n 1 -c 16 --mem 32gb --out logs/make_gvcf.%a.log --time 48:00:00
 
 module load picard
 module load java/13
