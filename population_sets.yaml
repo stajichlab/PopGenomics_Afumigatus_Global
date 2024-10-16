@@ -1,4 +1,26 @@
 Populations:
+  CEA10_Pop:
+    - CEA10
+    - AF106-7_Y4
+    - A1163
+    - SM12_R4
+    - SM12_R2
+    - SM12_R7
+    - SM12_R6
+    - SM12_R3
+    - SM12_R10
+    - CEA10_CramerSM
+    - CBS144
+    - CEA10_NPK
+    - CEA10_flat
+    - akuBKU80
+    - CEA10-2
+    - CEA10-MCH
+  CEA10MixUP:
+    - CEA10_wrinkled
+    - CEA10_flat
+    - CBS144
+    - CEA10_NPK
   HMORPHCOMPARE1:
     - AZTEC_3_226
     - AZTEC_4_250
@@ -41,6 +63,7 @@ Populations:
     - W72310
 
   All:
+    - Afischeri
     - W72310
     - AF100-2-A
     - AF100-2-C
@@ -112,12 +135,10 @@ Populations:
     - AF100-12_7
     - AF100-12_7G
     - AF100-12_8
-    - AF106-6_10
     - AF106-6_2
     - AF106-6_3
     - AF106-6_4
     - AF106-6_5
-    - AF106-6_7
     - AF106-6_9
     - AZTEC_10_245
     - AZTEC_11_1066
@@ -232,7 +253,6 @@ Populations:
     - B7594_CDC-27
     - C56A.1_1.1
     - Mg18-1
-    - Moose_3-1.1
     - Moose_3-1.2
     - Oryx_1
     - ICMP-23421
@@ -245,7 +265,6 @@ Populations:
     - IF1SW-F4_WG
     - JCM10253_WG
     - LMB-35Aa_WG
-    - SPS-2_WG
     - Z5_WG
     - 08-12-12-13
     - 08-19-02-10
@@ -585,7 +604,28 @@ Populations:
     - SM6_R3
     - SM6_R4
     - SM6_R6
-
+    - RJ1.1
+    - N63310195.1
+    - IBT.1.1
+    - IBT.2.1
+    - TH002.1
+    - TH003.1
+    - TH004.1
+    - TH005.1
+    - TH006.1
+    - TH007.1
+    - TH008.4
+    - TH009.1
+    - TH010.1
+    - TH011.1
+    - TH012.1
+    - TH013.1
+    - TH014.1
+    - CEA10_wrinkled
+    - CEA10_flat
+    - CBS144
+    - CEA10_NPK
+    
   DAPC_Clade_3:
     - CM2495
     - CM2730
