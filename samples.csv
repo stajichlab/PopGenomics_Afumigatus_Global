@@ -571,3 +571,7 @@ TH011.1,Cramer_202308/3851_14_S10_R?_001.fastq.gz
 TH012.1,Cramer_202308/3851_15_S11_R?_001.fastq.gz
 TH013.1,Cramer_202308/3851_16_S12_R?_001.fastq.gz
 TH014.1,Cramer_202308/3851_17_S13_R?_001.fastq.gz
+CEA10_wrinkled,CEA10_mixup/5373_001_CEA10wrinkle_S50_R?_001.fastq.gz
+CEA10_flat,CEA10_mixup/5373_002_CEA10flat_S51_R?_001.fastq.gz
+CBS144,CEA10_mixup/5373_003_CBS144_S52_R?_001.fastq.gz
+CEA10_NPK,CEA10_mixup/5373_004_NPK_S53_R?_001.fastq.gz
