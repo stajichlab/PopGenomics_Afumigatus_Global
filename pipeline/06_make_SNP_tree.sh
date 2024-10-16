@@ -1,6 +1,5 @@
 #!/usr/bin/bash
-#SBATCH --mem=24gb --ntasks 24 --nodes 1
-#SBATCH --time=2:00:00 -p short
+#SBATCH --mem=24gb -N 1 -n 1 -c 24
 #SBATCH -J maketree --out logs/make_tree.log
 
 module load yq
@@ -55,7 +54,7 @@ fasttreerun() {
 
 export -f print_fas fasttreerun iqtreerun
 mkdir -p $TREEDIR
-for POPNAME in $(yq eval '.Populations | keys' $POPYAML | perl -p -e 's/^\s*\-\s*//' )
+for POPNAME in $(yq eval '.Populations | keys' $POPYAML | perl -p -e 's/^\s*\-\s*//')
 do
   for TYPE in SNP
   do

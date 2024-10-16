@@ -61,7 +61,7 @@ if [ -z $SLICEVCF ]; then
 	SLICEVCF=vcf_slice
 fi
 mkdir -p $SLICEVCF
-for POPNAME in $(yq eval '.Populations | keys' $POPYAML | perl -p -e 's/^\s*\-\s*//')
+for POPNAME in $(yq eval '.Populations | keys' $POPYAML | perl -p -e 's/^\s*\-\s*//') 
 do
 	FILES=$(yq eval '.Populations.'$POPNAME'[]' $POPYAML | perl -p -e "s/(\S+)/-V $GVCFFOLDER\/\$1.g.vcf.gz/g"  )
 	INTERVALS=$(cut -f1 $REFGENOME.fai  | sed -n "${NSTART},${NEND}p" | perl -p -e 's/(\S+)\n/--intervals $1 /g')
@@ -112,7 +112,7 @@ do
 			bcftools view -e "SOR > 4.0" -Ou | bcftools view -e "MQRankSum < -12.5" -Ou | bcftools view -e "ReadPosRankSum < -8.0" -Ou |
 			bcftools view -e "FS > 60.00" -Oz -o $SELECTSNP.gz
 	    END=$(date +%s)
-	    echo "Elapsed Time bcftools SELECTSNP $SELECTSNP: $(($end-$start)) seconds"
+	    echo "Elapsed Time bcftools SELECTSNP $SELECTSNP: $(($END-$START)) seconds"
 	    tabix $FILTERSNP.gz
 	fi
 
