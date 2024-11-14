@@ -1,5 +1,5 @@
 #!/usr/bin/bash -l
-#SBATCH --mem=64G -p batch --nodes 1 --ntasks 8 --out logs/snpEff.log
+#SBATCH --mem=64G --nodes 1 --ntasks 8 --out logs/snpEff.log
 module load snpEff/4.3t
 module load bcftools
 module load yq
