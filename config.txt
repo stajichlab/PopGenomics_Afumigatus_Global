@@ -28,3 +28,4 @@ snpEffConfig=snpEff.config
 SNPEFFGENOME=AfumigatusAf293_FungiDB_50
 GFFGENOME=FungiDB-50_AfumigatusAf293.gff
 POPYAML=population_sets.yaml
+REPEATS=repeats/FungiDB-50_AfumigatusAf293_Genome.RM.bed
