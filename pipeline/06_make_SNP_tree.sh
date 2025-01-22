@@ -32,6 +32,7 @@ module load iqtree
 module load fasttree
 module load workspace/scratch
 
+REPEATS=./repeats/FungiDB-50_AfumigatusAf293_Genome.RM.bed
 print_fas() {
   printf ">%s\n%s\n" $1 $(bcftools query -s $1 -f '[%IUPACGT]' $2 | tr -d '\n')
 }
@@ -40,7 +41,7 @@ iqtreerun() {
 	in=$1
 	out=$in.treefile
 	if [[ ! -f $out || $in -nt $out ]]; then
-		sbatch -p intel -n 6 -N 1 --mem 16gb -J iqtree --wrap "module load IQ-TREE/2.2.2.6; iqtree2 -m GTR+ASC -s $in -st DNA -nt AUTO -bb 1000 -alrt 1000"
+		sbatch -c 6 -n 1 -N 1 --mem 16gb -J iqtree --wrap "module load IQ-TREE/2.2.2.6; iqtree2 -m GTR+ASC -s $in -st DNA -nt AUTO -bb 1000 -alrt 1000"
 	fi
 }
 
@@ -48,7 +49,7 @@ fasttreerun() {
         in=$1
 	out=$(echo $in | perl -p -e 's/\.mfa/.fasttree.tre/')
         if [[ ! -f $out || $in -nt $out ]]; then
-                sbatch -p short -n 32 -N 1 --mem 16gb -p short -J FastTree --wrap "module load fasttree; FastTreeMP -gtr -gamma -nt < $in > $out"
+                sbatch -p short -c 32 -n 1 -N 1 --mem 16gb -p short -J FastTree --wrap "module load fasttree; FastTreeMP -gtr -gamma -nt < $in > $out"
         fi
 }
 
@@ -69,7 +70,7 @@ do
     vcf=$root.vcf.gz
     if [[ ! -f $FAS || ${vcf} -nt $FAS ]]; then
       vcftemp=$SCRATCH/$PREFIX.$POPNAME.$TYPE.vcf.gz
-      bcftools filter --threads $CPU  -Oz -o $vcftemp --SnpGap 3 -e 'QUAL < 1000 || AF=1 || INFO/AF < 0.05 || F_MISSING > 0' $vcf
+      bcftools filter --threads $CPU  -Oz -T ^${REPEATS} -o $vcftemp --SnpGap 3 -e 'QUAL < 1000 || AF=1 || INFO/AF < 0.05 || F_MISSING > 0' $vcf
       bcftools index $vcftemp
       # no ref genome alleles
       printf ">%s\n%s\n" $REFNAME $(bcftools query -f '%REF' $vcftemp | tr -d '\n') > $FAS
