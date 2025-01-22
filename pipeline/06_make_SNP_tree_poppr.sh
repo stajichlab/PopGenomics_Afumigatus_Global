@@ -25,6 +25,7 @@ if [[ -z $POPYAML || ! -s $POPYAML ]]; then
   exit
 fi
 
+REPEATS=repeats/FungiDB-50_AfumigatusAf293_Genome.RM.bed
 module load bcftools
 module load samtools
 module load workspace/scratch
@@ -37,13 +38,16 @@ do
   do 
     root=$FINALVCF/$PREFIX.$POPNAME.$TYPE.combined_selected
     vcf=$root.vcf.gz
+    vcftemp=$root.filtered.vcf.gz
+    bcftools filter --threads $CPU  -Oz -T ^${REPEATS} -o $vcftemp --SnpGap 3 -e 'QUAL < 1000 || AF=1 || INFO/AF < 0.05 || F_MISSING > 0' $vcf
+    bcftools index $vcftemp
     tree=$TREEDIR/$PREFIX.$POPNAME.$TYPE.poppr.upgma.tre
     if [[ ! -s $tree || ${vcf} -nt $tree ]]; then
-	    sbatch -N 1 -c 24 -n 1 --mem 128gb --out logs/make_poppr_$POPNAME.upgma.%A.log --wrap "time Rscript ./scripts/poppr_tree.R --vcf $vcf --tree $tree --method upgma"
+	sbatch -N 1 -c 24 -n 1 --mem 128gb --out logs/make_poppr_$POPNAME.upgma.%A.log --wrap "time Rscript ./scripts/poppr_tree.R --vcf $vcftemp --tree $tree --method upgma"
     fi
     tree=$TREEDIR/$PREFIX.$POPNAME.$TYPE.poppr.nj.tre
     if [[ ! -s $tree || ${vcf} -nt $tree ]]; then
-	    sbatch -N 1 -n 1 -c 24 --mem 128gb --out logs/make_poppr_$POPNAME.nj.%A.log --wrap "time Rscript ./scripts/poppr_tree.R  --vcf $vcf --tree $tree --method nj"
+	    sbatch -N 1 -n 1 -c 24 --mem 128gb --out logs/make_poppr_$POPNAME.nj.%A.log --wrap "time Rscript ./scripts/poppr_tree.R  --vcf $vcftemp --tree $tree --method nj"
     fi
   done
 done
